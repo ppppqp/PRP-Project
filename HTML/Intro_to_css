@@ -1,0 +1,117 @@
+<!-- 定义不同情况下的不同样式 -->
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>CSS</title>
+	<style type=""> 
+		/*______________________________________________类型选择*/
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: lawngreen;
+		}/*可以选中所有的div元素*/
+
+		.myDiv{
+			width: 200px;
+			height: 100px;
+			background-color: yellow;
+			position:relative;/*自动,当作块级元素*/
+		}/*选中div class = mydiv*/
+		.otherDiv{
+			width: 200px;
+			height: 100px;
+			background-color: green;
+			position:absolute; /*inline block*/
+			left:20%;
+			top:100px;
+			margin:10px;
+			border:3px solid black;
+			padding:10px;
+			transition: 3s;/*元素过渡的时间*/
+			animation: moveto 5s infinite;/*动画循环，关键帧*/
+		}
+		@keyframes moveto{
+			from{background-color: green; transform:translateX(0);}
+			to{ background-color: red; transform: translateX(100); }
+		}
+		.otherDiv:hover{
+			transform: rotate(7deg) scale(1.2);
+		}
+		div.myDiv{
+
+		}/*选中class是myDIV的div*/
+
+		#div2{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}/*选中id=div2*/
+
+		.myDiv, #div2{
+
+		}/*选中所有同时具有两个性质的类*/
+
+		h3 + p{
+			color: red;
+		}/*选中紧紧相邻的p*/
+
+		h3~p{
+
+		}/*选中h3之后的所有p*/
+
+		div > p{
+
+		}/*选中div3中的所有p(直属，后代不算)*/
+
+		#div p{
+
+		}/*选中div3的所有后代p*/
+
+		/*————————————————————————————————————————————————属性选择*/
+
+		[good = true]{
+			...
+		}
+
+
+/*		_________________________________________________伪类和伪元素*/
+		.myDiv:hover{
+			background-color:red;
+		}/*捕捉鼠标状态，悬停则..*/
+
+		input{
+			background-color: white;
+		}
+		input:active{
+			background-color: black;
+		}/*在点击的时候变颜色*/
+
+		p::before{
+			content: "###"
+		}/*在p的内容之前加上###*/
+		p::firstline{
+			color: red;
+		}/*在p的第一行变红*/
+	</style>
+</head>
+<body>
+<div good = true class = "myDiv other anther" id = piv1></div> <!-- class可以同时被多个所有 -->
+<div class = "myDiv" id = "div2"></div> <!-- id一一对应 -->
+<div id = div3>
+	<h3>content</h3>
+	<p>content</p>
+</div>
+<div>
+	<input type="button">
+</div>
+<p>
+	blablabla
+</p>
+
+
+<!-- ——————————————————————————————————————————————————CSS的属性 -->
+<div class = "myDiv"></div>
+<div class = "otherDiv"></div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html><!-- <版本元素> -->
+<html lang = "en"><!-- <html元素> -->
+<head><!-- <头部元素> -->
+	<meta charset="utf-8">
+	<title>HTML & CSS</title><!-- <标题元素> -->
+</head>
+<body><!-- <主体元素> -->
+	<div>
+		<h1>Title1</h1>
+		<h2>Title2</h2>
+		<h3>title3</h3>
+		<h4>title4</h4>
+		<h5>title5</h5>
+		<h6>title6</h6> 
+	<p>
+		This is <b>bold</b> font.<br>
+		This is <i>italic</i> font.<br>
+		This is <span style="color: red">span</span> font with <span style="color: red" > red </span> option.<br>
+		Span tag is similar to environment in Latex.<br>
+		This is the normal font.
+<!-- ___________________________________________________________________________STYLE, Hyperlink and Picture
+ -->	</p>
+	<p>
+		A<sub>subscript</sub>
+		A<sup>supscript</sup>
+	</p>
+	<p>
+		<code>
+			std::cout << " Also, code block can be shown with syntax." << std::endl;
+		</code>
+	</p>
+	<img src="Snoopy.jpg" width=50 alt = "Not shown correctly">
+	<img src="Snoopy1.jpg" width = 50 alt = "Not shown correctly"><br>
+	<a href="https:www.baidu.com">
+		Go to Baidu<!-- Jump to Directly --><br>
+	</a> 	
+	<a href="https:www.baidu.com" target="_blank">
+		Go to Baidu in anther tag<br>
+		<img src="Baidu.gif"><br>
+	</a>
+<!-- ________________________________________________________________________________INPUT
+ -->
+ 	<input type="button" value = "click">
+ 	<input type="text" name="" id="">
+ 	<input type="number" name="" id="">
+ 	<input type="date" name=""  id = "">
+ 	<hr> <!-- 分界线 -->
+ 	<input type="password" name="">
+ 	<input type="range" name="" min = 10 max = 100 value = 80>
+ 	<div>
+ 		<input type="radio" name="defineToTheSameName" checked=""> option1<br>
+ 		<input type="radio" name="defineToTheSameName"> option2<br>
+ 		<input type="checkbox" name="checkbox"> check1<br>
+
+ 	<div>
+ <!-- __________________________________________________________________________________TABLE -->
+ 	<table border = "1" bgcolor="blue">
+ 		<tr><!-- 行 -->
+ 			<th colspan = "2">Table</th> colspan <!-- 表示要横跨几列 -->
+ 		</tr>
+ 		<tr>
+ 			<td>row1, col1</td><!-- 列 -->
+ 			<td rowspan="2">row1, col2</td><!-- 横跨几行 -->
+ 		</tr>
+ 		<tr>
+ 			<td>row2,col1</td> 
+ 		</tr>
+ 	</table>
+<!-- ___________________________________________________________________________________LISTS -->
+	<ul><!-- 无顺序的list -->
+		<li>
+			Monday
+		</li>
+		<li>
+			Tuesday
+		</li>
+		<li>
+			Wednesday
+		</li>
+	</ul>
+
+	<ol><!-- 有序列表 -->
+		<li>Monday</li>
+		<li>Tuesday</li>
+	</ol>
+	<dl><!-- 自定义列表 -->
+		<dt>Coffee</dt>
+		<dd>black hot drink</dd>
+		<dt>Milk</dt>
+		<dd>White cold drink</dd>
+	</dl>
+	<ol>
+		<li>
+			January<!-- 列表嵌套 -->
+			<ul>Monday</ul>
+		</li>
+		<li>
+			Feburary
+			<ul>Tuesday</ul>
+		</li>
+	</ol>
+<!-- ——————————————————————————————————————————————————————————————————————————————————————GRAPHICS -->
+<svg width = 1000 height = 1000>
+	<rect x = 50 y = 50 width = 150 height = 50
+	fill = "blue" stroke = "red" stroke-width = 1
+	rx = 30 ry = 30> 
+	</rect>
+	<!-- x和左边线的距离 -->
+	<!-- y和上边线的距离 -->
+	<!-- stroke勾线
+	rx,ry为曲率 -->
+	<text x= 20 y = 150 font-size = "40" fill = "red">text</text>
+	<circle cx = 100 cy = 200 r = 40></circle>
+	<ellipse cx = 100 cy = 300 rx = 50 ry = 30></ellipse>
+	<path d = "M100 400 L300 400 L200 500 Z" strok = "red" stroke-width = 10></path>
+
+	<g style = "transform: rotate(5deg);">
+		Rotate everything to 5 degree(or possibly move, scale)
+	</g>
+</svg>
+</div>
+</body>
+</html>>
