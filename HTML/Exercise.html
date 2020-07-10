@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> HTML Animation Exercise</title>
+	<style type="">
+		.myDiv{
+			fill: red;
+			transition: 3s;/*元素过渡的时间*/
+			animation: moveto  3s infinite;/*动画循环，关键帧*/
+		}
+		@keyframes moveto{
+			0%   {fill: red; transform:translate(0px, 0px);}
+			25%  {transform:translate(100px, 0px);}
+			50%  {fill: blue; transform:translate(100px, 100px);}
+			100% {transform:translate(0x, 100px);}
+		}
+	</style>
+</head> 
+		
+<body>
+	<div class = "myDiv">	
+		<svg width = 1000 height = 1000>
+			<path d = "M50 50 L120 50 L170 100 L120 150 L50 150  L 0 100 Z" strok = "red" stroke-width = 10></path>
+		</svg>
+	</div>
+</body>
+</html>>
