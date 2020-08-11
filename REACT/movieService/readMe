@@ -1,1 +1,3 @@
 This is an assignment with the course "porgrammingwithmosh".
+The code creates a webpage that support displaying and deleting the movie items.
+To run the code, first generate a react program. Then replace app.js, index.js with those in this folder. Put the fakeMovieService and fakeGenereService in /src. Finally, create a path called component under /src, and put moives.js in it.
