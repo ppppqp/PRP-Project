@@ -1,0 +1,5 @@
+Assignment2
+In this part of the assignment, you are required to provide a good interaction example. You need to provide:
+(1) Detailed description to the example you found.
+(2) Your findings and comments to the example.
+(3) Your learning from them, or advice for improvement.

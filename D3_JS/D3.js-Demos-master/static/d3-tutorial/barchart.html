@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BarChart!</title>
+    <script src="../js/d3.min.js"></script>
+  </head>
+  <body>
+    <svg width="1600" height="800" id="mainsvg" class="svgs"></svg>
+    <script>
+      const data = [
+        { name: "Shao-Kui", value: 6 },
+        { name: "Wen-Yang", value: 6 },
+        { name: "Cai Yun", value: 16 },
+        { name: "Liang Yuan", value: 10 },
+        { name: "Yuan-Chen", value: 6 },
+        { name: "Rui-Long", value: 10 },
+        { name: "Dong Xin", value: 12 },
+        { name: "He Yu", value: 20 },
+        { name: "Xiang-Li", value: 12 },
+        { name: "Godness", value: 20 },
+        { name: "Wei-Yu", value: 15 },
+        { name: "Chen Zheng", value: 14 },
+        { name: "Yu Peng", value: 15 },
+        { name: "Li Jian", value: 18 },
+      ];
+
+      const svg = d3.select("#mainsvg");
+      const width = +svg.attr("width"); //获得svg的参数
+      const height = +svg.attr("height");
+      const margin = { top: 60, right: 30, bottom: 60, left: 150 }; //定义预留margin
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+
+      const g = svg
+        .append("g")
+        .attr("id", "maingroup")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+      const xScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(data, (datum) => datum.value)]) //d3的接口：求max
+        .range([0, innerWidth]);
+
+      const yScale = d3
+        .scaleBand()
+        .domain(data.map((datum) => datum.name)) //map将属性当作list导出
+        .range([0, innerHeight])
+        .padding(0.1); //padding表示条带之间的间隔
+
+      data.forEach((datum) => {
+        //forEach 遍历数组中的每一个元素，对每一个元素执行
+        g.append("rect")
+          .attr("width", xScale(datum.value))
+          .attr("height", yScale.bandwidth()) //矩形的宽度即为yScale的带宽
+          .attr("y", yScale(datum.name)) //y轴的位置
+          .attr("fill", "green")
+          .attr("opacity", "0.8");
+      }); //将每个元素变成一个rect，并加入svg的group
+
+      // the following four lines of code is the simplest pattern of adding axis;
+      const yAxis = d3.axisLeft(yScale); //坐标轴
+      const xAxis = d3.axisBottom(xScale); //xaxis和yaxis其实是两个函数
+      g.append("g").call(yAxis); //.call渲染坐标轴，即通过到普皮敏感yAxis
+      g.append("g")
+        .call(xAxis)
+        .attr("transform", `translate(0, ${innerHeight})`); //横坐标需要移动到最底端
+
+      // the following lines are improved version of the above four lines,
+      // which configurates more attributes and adds two axis labels;
+      /*const yAxis = d3.axisLeft(yScale).tickSize(-innerWidth);
+        const xAxis = d3.axisBottom(xScale).tickSize(-innerHeight);
+
+        const yAxisGroup = g.append('g').call(yAxis)
+        .attr('id', 'yaxis')
+        .append('text')
+        .text('Name')
+        .attr('font-size', '3em')
+        .attr('transform', 'rotate(-90)') // y-axis label needs an additional transform; 
+        .attr('x', -innerHeight / 2)
+        .attr('y', -120)
+        .attr('fill', 'black')
+        const xAxisGroup = g.append('g').call(xAxis)
+        .attr('id', 'xaxis')
+        .attr('transform', `translate(${0}, ${innerHeight})`)
+        .append('text')
+        .text('Value')
+        .attr('font-size', '3em')
+        .attr('x', innerWidth / 2)
+        .attr('y', 50)
+        .attr('fill', 'black');*/
+
+      d3.selectAll(".tick text").attr("font-size", "2em"); //调整字体大小
+
+      g.append("text")
+        .text("Members of CSCG")
+        .attr("font-size", "3em")
+        .attr("x", innerWidth / 2 - 200)
+        .attr("y", -10);
+    </script>
+  </body>
+</html>

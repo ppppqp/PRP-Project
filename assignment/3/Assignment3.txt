@@ -1,0 +1,9 @@
+Write one interactive program on following provided data set and achieve interactive rearrangement on data for user exploration.
+参考“rearrangement”，用相同的数据完成交互程序的设计与实现。
+除此之外，你还需要提交一份作业报告，包含以下几项：
+1. 数据描述和分析。数据的维度、规模、特性，对这个数据可能开展的分析点包括哪些。
+2. 设计宗旨和设计过程。从数据分析的角度出发，做这个设计（交互）你的关注点是什么，选择这个设计，好处是什么，难点是什么。
+3. 可视化结果描述。给出你的可视化作品说明，并说说从这个作品中你的发现。整个过程中你的感受。
+
+Data Set : hotel.csv
+Data Description:  hotel数据描述.pdf
