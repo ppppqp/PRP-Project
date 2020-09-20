@@ -61,6 +61,7 @@
           .attr("stroke", "black")
           .attr("stroke-width", 1)
           .on("mouseover", function (d) {
+            console.log(this);
             d3.select(this)
               .attr("opacity", 0.5)
               .attr("stroke", "white")
@@ -74,6 +75,7 @@
               .attr("stroke-width", 1);
           })
           .on("contextmenu", function (d) {
+            console.log(d);
             d3.event.preventDefault();
             if (lastid !== d.properties.name) {
               tip.show(d);
