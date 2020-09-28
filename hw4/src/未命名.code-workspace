@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": "../../mastering-react-mosh-master/http-app"
+    },
+    {
+      "path": "../../barchart/src"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../../mastering-react-mosh-master/router-app/src"
+    },
+    {
+      "path": "../../react-app"
+    }
+  ],
+  "settings": {}
+}
