@@ -3,7 +3,7 @@ import rd3 from "react-d3-library";
 import {
   select,
   geoNaturalEarth1,
-  scaleSqrt,
+  scaleLinear,
   max,
   format,
   selectAll,
@@ -42,13 +42,6 @@ const draw = (props) => {
   //.attr("transform", `translate(${margin.top}, ${margin.right})`);
   const projection = d3.geoNaturalEarth1();
   const pathGenerator = d3.geoPath().projection(projection);
-  /*
-  svg.call(
-    zoom().on("zoom", () => {
-      g.attr("transform", d3.event.transform);
-    })
-  );
-*/
   let lastid = undefined;
   Promise.all([
     tsv("https://unpkg.com/world-atlas@1.1.4/world/50m.tsv"),
@@ -56,29 +49,49 @@ const draw = (props) => {
   ]).then(([tsvData, topoJSONdata]) => {
     // parses tsvData to extract country names for base map titles
     const countryName = {};
+    const countryCode = {};
     tsvData.forEach((d) => {
       countryName[d.iso_n3] = d.name;
+      countryCode[d.iso_n3] = d.iso_a3;
     });
     // draws a path for each country with countryName as title (shown on hover)
     var worldmeta = feature(topoJSONdata, topoJSONdata.objects.countries);
     projection.fitSize([innerWidth, innerHeight], worldmeta);
     const radiusValue = (d) => (+d.datum > 0 ? +d.datum : -+d.datum);
+    const absoluteValue = (d) => (d > 0 ? d : -d);
     const sign = (d) => (+d.datum > 0 ? 1 : -1);
-    const sizeScale = scaleSqrt()
+    var count = 0; //count the country that has the data
+    const findColor = (d) => {
+      const temp = data.filter((c) => c.code === d);
+      //console.log(temp);
+      if (temp[0] != null) {
+        count++;
+        return temp[0].datum;
+      } else return 0;
+    };
+    const sizeScale = scaleLinear()
       .domain([0, max(data, (d) => +d.datum, radiusValue)])
       .range([0, 255]);
-    //console.log(sizeScale(radiusValue(data[1])));
-    //console.log(countryName[data[1].id]);
+    const sizeScale2 = scaleLinear()
+      .domain([0, max(data, (d) => +d.datum, radiusValue)])
+      .range([0, 15]);
+    //console.log(findColor(countryCode[705]));
+
+    //console.log(color(sizeScale(data[143].datum)));
+    //console.log(worldmeta.features);
     const paths = g
-      .selectAll("path")
-      .data(worldmeta.features, (d) => d.properties.name)
+      .selectAll(".map")
+      .data(worldmeta.features)
       .enter()
       .append("path")
       .attr("d", pathGenerator)
+      .attr("class", "map")
       .attr("stroke", "black")
       .attr("stroke-width", 1)
-      .text((d) => countryName[d.id])
-      //.attr("fill", (d) => color(sizeScale(radiusValue(d))))
+      .text((d) => countryCode[d.id])
+      .attr("fill", (d) =>
+        color(sizeScale(absoluteValue(findColor(countryCode[d.id]))))
+      )
       .on("click", function (d) {
         onSelectCountry(d3.select(this).text());
       })
@@ -96,12 +109,10 @@ const draw = (props) => {
           .attr("stroke-width", 1);
       });
 
-    g.selectAll("path")
+    /* g.selectAll(".map")
       .data(data)
       .attr("fill", (d) => color(sizeScale(radiusValue(d))));
-    //].append("title")
-    //.text((d) => countryName[d.id]);
-
+*/
     /*
     g.selectAll("circle")
       .data(data)
@@ -111,14 +122,15 @@ const draw = (props) => {
         return "translate(" + projection([d.long, d.lat]) + ")";
       })
       //})
-      .attr("r", (d) => sizeScale(radiusValue(d)))
+      .attr("r", (d) => sizeScale2(radiusValue(d)))
       .attr("fill", (d) => color(sign(d)))
       .attr("opacity", 0.8)
       .append("title")
       .text(
         (d) => d.country + ": " + d.datum //+ ": " + format(",")(d[`${caseType}`])
       );
-    */
+
+  */
   });
 };
 

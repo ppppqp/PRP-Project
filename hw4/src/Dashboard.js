@@ -26,7 +26,7 @@ export default class Dashboard extends Component {
       hotel: getHotel(),
       countryData: countryData,
       selectedCountry: "China",
-      selecedCode: "CHN",
+      selectedCode: "CHN",
       includedMon: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       corona: corona,
       countries: countries,
@@ -55,9 +55,17 @@ export default class Dashboard extends Component {
       countryName: [],
     };
   }
-  handleSelectCountry = (c) => {
-    this.setState({ selectedCountry: c });
-    //this.setState({ selectedCode: code });
+  handleSelectCountry = (code) => {
+    //this.setState({ selectedCountry: c });
+    console.log(code);
+    /*
+    const selectedCountry = countryData.filter(
+      (d) => d["Country Code"] === code
+    );
+    
+    this.setState({ selectedCountry: selectedCountry[0] });
+    */
+    this.setState({ selectedCode: code });
   };
   handleSelectX = (attr) => {
     this.setState({ selectedAttr: attr });
@@ -119,14 +127,14 @@ export default class Dashboard extends Component {
     const selectedAttrData = countryData.filter(
       (d) => d["Series Name"] === selectedAttr
     );
+    console.log(selectedCode);
     const singleCountryData = countryData.filter(
       (d) =>
-        d["Series Name"] === selectedAttr &&
-        d["Country Name"] === selectedCountry
+        d["Series Name"] === selectedAttr && d["Country Code"] === selectedCode
     );
     let countryAttrDataList = [];
     let countryFlag;
-    const temp = corona.filter((c) => c.country === selectedCountry);
+    const temp = corona.filter((c) => c.countryInfo.iso3 === selectedCode);
     if (temp[0] != null) countryFlag = temp[0].countryInfo.flag;
 
     const arr = [];
@@ -134,7 +142,6 @@ export default class Dashboard extends Component {
       if (d[selectedYear]) arr.push(+d[selectedYear]);
     });
     const maxNum = Math.max(...arr);
-    console.log(arr);
 
     /*
     const maxNum = Math.max.apply(
@@ -152,13 +159,14 @@ export default class Dashboard extends Component {
       if (temp[0] != null) {
         countryAttrDataList.push({
           country: d["Country Name"],
+          code: d["Country Code"],
           datum: d[selectedYear],
           lat: temp[0].countryInfo.lat,
           long: temp[0].countryInfo.long,
         });
       }
     });
-    //console.log(selectedAttrData);
+    console.log(countryAttrDataList);
     let singleCountryArray = [
       { year: 2010, datum: singleCountryData[0]["2010 [YR2010]"] },
       { year: 2011, datum: singleCountryData[0]["2011 [YR2011]"] },
@@ -174,9 +182,14 @@ export default class Dashboard extends Component {
           <Sider width={300} style={{ backgroundColor: "#eee" }}>
             <Content style={{ height: 200 }}>
               <View1
-                selectedCountry={selectedCountry}
+                selectedCountry={selectedCode}
                 selectedAttr={selectedAttr}
                 countryFlag={countryFlag}
+                value={
+                  singleCountryData[0] === null
+                    ? "unknown"
+                    : singleCountryData[0][selectedYear]
+                }
               />
             </Content>
             <Content style={{ height: 300 }}></Content>
@@ -205,7 +218,7 @@ export default class Dashboard extends Component {
                   data={countryData}
                   years={years}
                   attrs={attrs}
-                  selectedAttr={selectedCountry}
+                  selectedAttr={selectedCode}
                   selectedYear={selectedYear}
                   onSelectX={this.handleSelectX}
                   onSelectY={this.handleSelectY}

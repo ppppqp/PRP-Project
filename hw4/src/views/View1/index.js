@@ -4,7 +4,7 @@ import "./view1.css";
 
 export default class View1 extends Component {
   render() {
-    let { selectedCountry, selectedAttr, countryFlag } = this.props;
+    let { selectedCountry, selectedAttr, countryFlag, value } = this.props;
     console.log(countryFlag);
     return (
       <div id="view1" className="pane">
@@ -16,6 +16,7 @@ export default class View1 extends Component {
           <div className={"info-view"}>
             <div>Name: {selectedCountry}</div>
             <div>Attr: {selectedAttr}</div>
+            <div>Value: {value} </div>
           </div>
         </div>
       </div>
