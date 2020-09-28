@@ -59,11 +59,16 @@ const draw = (props) => {
     tsvData.forEach((d) => {
       countryName[d.iso_n3] = d.name;
     });
-
     // draws a path for each country with countryName as title (shown on hover)
     var worldmeta = feature(topoJSONdata, topoJSONdata.objects.countries);
     projection.fitSize([innerWidth, innerHeight], worldmeta);
-
+    const radiusValue = (d) => (+d.datum > 0 ? +d.datum : -+d.datum);
+    const sign = (d) => (+d.datum > 0 ? 1 : -1);
+    const sizeScale = scaleSqrt()
+      .domain([0, max(data, (d) => +d.datum, radiusValue)])
+      .range([0, 255]);
+    //console.log(sizeScale(radiusValue(data[1])));
+    //console.log(countryName[data[1].id]);
     const paths = g
       .selectAll("path")
       .data(worldmeta.features, (d) => d.properties.name)
@@ -73,6 +78,7 @@ const draw = (props) => {
       .attr("stroke", "black")
       .attr("stroke-width", 1)
       .text((d) => countryName[d.id])
+      //.attr("fill", (d) => color(sizeScale(radiusValue(d))))
       .on("click", function (d) {
         onSelectCountry(d3.select(this).text());
       })
@@ -89,14 +95,14 @@ const draw = (props) => {
           .attr("stroke", "black")
           .attr("stroke-width", 1);
       });
+
+    g.selectAll("path")
+      .data(data)
+      .attr("fill", (d) => color(sizeScale(radiusValue(d))));
     //].append("title")
     //.text((d) => countryName[d.id]);
 
-    const radiusValue = (d) => (+d.datum > 0 ? +d.datum : -+d.datum);
-    const sign = (d) => (+d.datum > 0 ? 1 : -1);
-    const sizeScale = scaleSqrt()
-      .domain([0, max(data, (d) => +d.datum, radiusValue)])
-      .range([0, 15]);
+    /*
     g.selectAll("circle")
       .data(data)
       .enter()
@@ -112,6 +118,7 @@ const draw = (props) => {
       .text(
         (d) => d.country + ": " + d.datum //+ ": " + format(",")(d[`${caseType}`])
       );
+    */
   });
 };
 
