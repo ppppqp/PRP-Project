@@ -139,10 +139,10 @@ export default class Dashboard extends Component {
 
     const arr = [];
     selectedAttrData.forEach(function (d) {
-      if (d[selectedYear]) arr.push(+d[selectedYear]);
+      if (!isNaN(d[selectedYear])) arr.push(+d[selectedYear]);
     });
     const maxNum = Math.max(...arr);
-
+    console.log(maxNum);
     /*
     const maxNum = Math.max.apply(
       Math,
@@ -156,7 +156,10 @@ export default class Dashboard extends Component {
       const temp = corona.filter(
         (c) => c.countryInfo.iso3 === d["Country Code"]
       );
-      if (temp[0] != null) {
+      if (
+        temp[0] != null &&
+        d[selectedYear] > (maxNum / 100) * greaterThenAge
+      ) {
         countryAttrDataList.push({
           country: d["Country Name"],
           code: d["Country Code"],

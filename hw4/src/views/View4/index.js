@@ -23,7 +23,7 @@ export default class View4 extends Component {
       height = 150;
     return (
       <div id="view4" className="pane">
-        <div className="header">User Acivities</div>
+        <div className="header">Attr Trend</div>
         <div style={{ overflowX: "scroll", overflowY: "hidden" }}>
           <LineChart data={data} width={width} height={height} />
         </div>

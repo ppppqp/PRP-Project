@@ -5,8 +5,10 @@ import {
   geoNaturalEarth1,
   scaleLinear,
   max,
+  min,
   format,
   selectAll,
+  zoom,
   tsv,
   json,
 } from "d3";
@@ -70,15 +72,16 @@ const draw = (props) => {
       } else return 0;
     };
     const sizeScale = scaleLinear()
-      .domain([0, max(data, (d) => +d.datum, radiusValue)])
+      .domain([
+        0,
+        //min(data, (d) => +d.datum, radiusValue),
+        max(data, (d) => +d.datum, radiusValue),
+      ])
       .range([0, 255]);
     const sizeScale2 = scaleLinear()
       .domain([0, max(data, (d) => +d.datum, radiusValue)])
       .range([0, 15]);
-    //console.log(findColor(countryCode[705]));
 
-    //console.log(color(sizeScale(data[143].datum)));
-    //console.log(worldmeta.features);
     const paths = g
       .selectAll(".map")
       .data(worldmeta.features)
@@ -108,7 +111,13 @@ const draw = (props) => {
           .attr("stroke", "black")
           .attr("stroke-width", 1);
       });
-
+    /*
+    svg.call(
+      zoom().on("zoom", () => {
+        g.attr("transform", event.transform);
+      })
+    );
+    */
     /* g.selectAll(".map")
       .data(data)
       .attr("fill", (d) => color(sizeScale(radiusValue(d))));
