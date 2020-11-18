@@ -14,21 +14,23 @@ select = Select(wd.find_element_by_name('choose_key'))
 select.select_by_value("year")
 button = wd.find_element_by_css_selector("input[type = 'submit']")   
 button.click()
-pages = range(293)
+pages = range(4)
 row = 0
 for page in pages:
-  table = wd.find_elements_by_css_selector("tr[height = '35px']")
-  for tr in table:
-    texts = tr.find_elements_by_tag_name('td')
-    col = 0
+  for x in range(20):
+    table = wd.find_elements_by_css_selector("tr[height = '35px']")
+    tr = table[x]
+    tr.find_element_by_link_text("查看详情").click()
+    texts = wd.find_elements_by_css_selector("td[colspan = '2']")
+    col = 1
+    sheet.write(row, 0, row)
     for text in texts:
       print(text.text)
-      if(col == 0) :
-        sheet.write(row, col, row)
-      else :
-        sheet.write(row,col,text.text)
+      sheet.write(row,col,text.text)
       col += 1
     row += 1
+    wd.find_element_by_link_text("返回上一页").click()
+  time.sleep(1)
   pagination = wd.find_element_by_class_name("pagination")
   pagination.find_element_by_link_text('>').click()
 time.sleep(1)   #等待3秒
