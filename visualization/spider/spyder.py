@@ -14,7 +14,7 @@ select = Select(wd.find_element_by_name('choose_key'))
 select.select_by_value("year")
 button = wd.find_element_by_css_selector("input[type = 'submit']")   
 button.click()
-pages = range(4)
+pages = range(293)
 row = 0
 for page in pages:
   for x in range(20):
@@ -29,6 +29,7 @@ for page in pages:
       sheet.write(row,col,text.text)
       col += 1
     row += 1
+    time.sleep(1)
     wd.find_element_by_link_text("返回上一页").click()
   time.sleep(1)
   pagination = wd.find_element_by_class_name("pagination")
