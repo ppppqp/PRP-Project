@@ -1,0 +1,54 @@
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+.header {
+  height: 84px;
+  border-bottom: 2px solid #c81523;
+}
+.logo {
+  padding-top: 18px;
+}
+.register_area {
+  height: 522px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+.register_area h3 {
+  line-height: 43px;
+  padding: 0 5px;
+  height: 43px;
+  border-bottom: 1px solid #ccc;
+  background-color: #ececec;
+  font-size: 18px;
+  font-weight: 400;
+}
+.login {
+  float: right;
+  font-size: 14px;
+}
+.login a {
+  color: #c81523;
+}
+.reg_form {
+  width: 600px;
+  margin: 50px auto 0;
+}
+.reg_form ul li {
+  margin-bottom: 20px;
+}
+.reg_form label {
+  display: inline-block;
+  width: 88px;
+  text-align: right;
+}
+.reg_form input {
+  width: 242px;
+  height: 37px;
+  border: 1px solid #ccc;
+}
+.reg_form span {
+  display: inline-block;
+  margin-left: 10px;
+  color: #c81523;
+}

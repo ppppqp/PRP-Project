@@ -1,0 +1,20 @@
+.main {
+  margin-left: 220px;
+  width: 980px;
+  height: 455px;
+  margin-top: 10px;
+}
+.focus {
+  width: 721px;
+  height: 455px;
+  float: left;
+}
+.focus image {
+  width: 721px;
+  height: 455px;
+}
+.newflash {
+  float: right;
+  width: 250px;
+  height: 455px;
+}
