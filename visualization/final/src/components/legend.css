@@ -1,0 +1,26 @@
+.Legend-vis {
+  overflow: scroll;
+  position: relative;
+
+  padding: 10px;
+  padding-left: 20px;
+  height: 250px;
+  width: 460px;
+  font-size: 14px;
+}
+.Legend-vis .row {
+  display: flex;
+  margin-bottom: 5px;
+}
+.Legend-vis .name {
+  flex: 6;
+  width: 200px;
+  margin-left: 5px;
+}
+.Legend-vis .row .colorbox {
+  background-color: transparent;
+  flex: 3;
+}
+.Legend-vis .row .colorbox .color {
+  height: 20px;
+}

@@ -1,0 +1,505 @@
+神经网络 0.0011283557902468197 <class 'str'>
+复合材料 0.0007755936990468241 <class 'str'>
+swot 0.0007383125925518155 <class 'str'>
+china 0.0006693091578295052 <class 'str'>
+风险管理 0.0006126803395545859 <class 'str'>
+等离子体 0.0004410645626713651 <class 'str'>
+力学性能 0.0004040909517930326 <class 'str'>
+控制系统 0.00039551484727858694 <class 'str'>
+遗传算法 0.0003862391956673709 <class 'str'>
+商业模式 0.0003610862420080114 <class 'str'>
+项目管理 0.00034539262926851076 <class 'str'>
+市场营销 0.0003441231383619096 <class 'str'>
+商业银行 0.0003247075228701471 <class 'str'>
+fpga 0.0003242548553504259 <class 'str'>
+analysis 0.00031368562019835406 <class 'str'>
+不确定性 0.000313674246972101 <class 'str'>
+social 0.00030027905808563865 <class 'str'>
+上市公司 0.00029726898956424646 <class 'str'>
+pest 0.00029575658930099645 <class 'str'>
+相互作用 0.0002951352594841232 <class 'str'>
+特征提取 0.0002851980515961417 <class 'str'>
+电子商务 0.00028294333278344204 <class 'str'>
+political 0.0002724303692582538 <class 'str'>
+image 0.00027183212748062513 <class 'str'>
+theory 0.0002692102899051704 <class 'str'>
+管理系统 0.000256484649065718 <class 'str'>
+故障诊断 0.00023945036234584492 <class 'str'>
+数据挖掘 0.00023139700831002787 <class 'str'>
+资源管理 0.00022948400989842235 <class 'str'>
+卡尔曼滤波 0.0002202369318477165 <class 'str'>
+公共服务 0.0002198017836277706 <class 'str'>
+media 0.0002189769265870057 <class 'str'>
+economic 0.00021552379252431518 <class 'str'>
+人工智能 0.00020726818021769814 <class 'str'>
+碳纳米管 0.00020336477291735372 <class 'str'>
+model 0.00020299927376385383 <class 'str'>
+马克思主义 0.0002012553641846477 <class 'str'>
+燃料电池 0.00020122407021037027 <class 'str'>
+detection 0.00020049321641351064 <class 'str'>
+energy 0.00020030009434552056 <class 'str'>
+中小企业 0.00019964190183601095 <class 'str'>
+结构设计 0.00019583618087308752 <class 'str'>
+mems 0.0001954944619307614 <class 'str'>
+生命周期 0.00019422665073442872 <class 'str'>
+policy 0.00018929978369127364 <class 'str'>
+控制策略 0.00018799391269098717 <class 'str'>
+六西格玛 0.00018541908728709068 <class 'str'>
+international 0.00018449017743258305 <class 'str'>
+foreign 0.00018042369055244295 <class 'str'>
+management 0.00017930147611999736 <class 'str'>
+data 0.00017777032256113755 <class 'str'>
+激励机制 0.00017379517350389067 <class 'str'>
+人力资源 0.00017229068540110026 <class 'str'>
+信号处理 0.00016359116901347527 <class 'str'>
+需求预测 0.00016342190654529824 <class 'str'>
+learning 0.00016338061541697562 <class 'str'>
+图像处理 0.00016330113045164713 <class 'str'>
+public 0.00016187321526237893 <class 'str'>
+数据分析 0.00016063053572141754 <class 'str'>
+solar 0.0001601818561838103 <class 'str'>
+聚类分析 0.00015854461899621986 <class 'str'>
+纳米材料 0.00015806450916127848 <class 'str'>
+巨噬细胞 0.00015767332134193607 <class 'str'>
+再生能源 0.00015664362225789472 <class 'str'>
+电动汽车 0.00015574960331550116 <class 'str'>
+technology 0.0001553055889809456 <class 'str'>
+slam 0.0001531589464261042 <class 'str'>
+协同效应 0.0001465540831718623 <class 'str'>
+信用风险 0.00014645539826093715 <class 'str'>
+current 0.0001454008576256324 <class 'str'>
+cooperation 0.0001450494256944555 <class 'str'>
+模型试验 0.00014273415974337144 <class 'str'>
+知识产权 0.00014219427797810695 <class 'str'>
+android 0.00014139861049635563 <class 'str'>
+adoption 0.00013914523153137615 <class 'str'>
+relations 0.00013868498700224887 <class 'str'>
+fmea 0.00013849047862530907 <class 'str'>
+metal 0.00013764512800321546 <class 'str'>
+盈利模式 0.0001359170016809839 <class 'str'>
+生态系统 0.00013511441591741147 <class 'str'>
+cultural 0.00013435513270213382 <class 'str'>
+二氧化碳 0.0001334996843484226 <class 'str'>
+风险投资 0.00013328481523500774 <class 'str'>
+road 0.0001322868405846636 <class 'str'>
+gender 0.00013166462340024403 <class 'str'>
+strategy 0.00013015906326841318 <class 'str'>
+garch 0.00012788155169359922 <class 'str'>
+security 0.00012783513441361996 <class 'str'>
+模糊控制 0.00012708871644711046 <class 'str'>
+crisis 0.00012698313283985847 <class 'str'>
+investment 0.000126023023473025 <class 'str'>
+精神分裂症 0.00012587729746992146 <class 'str'>
+crispr 0.0001257582129795946 <class 'str'>
+战略规划 0.0001255424728918321 <class 'str'>
+housing 0.00012522408795843435 <class 'str'>
+environment 0.00012499048914767636 <class 'str'>
+dmaic 0.00012417278533427092 <class 'str'>
+logistic 0.00012274706839289964 <class 'str'>
+沙门氏菌 0.00012124279583316192 <class 'str'>
+cas9 0.00012042004698434812 <class 'str'>
+信息系统 0.00012019724161043138 <class 'str'>
+change 0.00011983422758428617 <class 'str'>
+民营企业 0.00011934638022355507 <class 'str'>
+不稳定性 0.00011931525384751601 <class 'str'>
+燃气轮机 0.0001189808582953622 <class 'str'>
+system 0.00011895447617728647 <class 'str'>
+基转移酶 0.00011877685087567427 <class 'str'>
+自然语言 0.0001179807166404242 <class 'str'>
+流体力学 0.00011783713556242423 <class 'str'>
+网络安全 0.0001175757816267107 <class 'str'>
+医疗器械 0.00011696749078168579 <class 'str'>
+performance 0.00011618537569147921 <class 'str'>
+信息安全 0.00011608478319356204 <class 'str'>
+可持续性 0.00011599381886703262 <class 'str'>
+绩效评价 0.00011595753864055943 <class 'str'>
+指标体系 0.00011569012814558222 <class 'str'>
+segmentation 0.00011313003161459936 <class 'str'>
+国有企业 0.00011289041510648271 <class 'str'>
+参数估计 0.00011279414530571961 <class 'str'>
+high 0.00011272530078674397 <class 'str'>
+lstm 0.00011250254090687973 <class 'str'>
+imaging 0.0001124758179019445 <class 'str'>
+matlab 0.00011215215418557351 <class 'str'>
+prediction 0.00011162925378651483 <class 'str'>
+heat 0.00011161144297456252 <class 'str'>
+最优控制 0.0001107361522828528 <class 'str'>
+客户关系 0.00011041277856701773 <class 'str'>
+业务流程 0.00011002310679307803 <class 'str'>
+股权结构 0.00010953317081420272 <class 'str'>
+化学成分 0.00010940581071042666 <class 'str'>
+氧化应激 0.00010898932280243717 <class 'str'>
+fiber 0.00010825560280712073 <class 'str'>
+移动机器人 0.00010822154438776397 <class 'str'>
+design 0.00010814238873629859 <class 'str'>
+rfid 0.0001080836099374883 <class 'str'>
+market 0.00010763686236579189 <class 'str'>
+point 0.00010703711301540759 <class 'str'>
+有限元法 0.00010685579231150165 <class 'str'>
+特征选择 0.00010667690796992398 <class 'str'>
+flow 0.00010597417762952413 <class 'str'>
+cells 0.00010536269060223398 <class 'str'>
+同步电机 0.00010535975496435909 <class 'str'>
+集成电路 0.00010522906313869106 <class 'str'>
+cell 0.00010492795240092995 <class 'str'>
+财务指标 0.00010485738851696654 <class 'str'>
+enterprises 0.000104350121213129 <class 'str'>
+approach 0.00010420198896216479 <class 'str'>
+模式识别 0.00010416872895426394 <class 'str'>
+multi 0.00010354944896144965 <class 'str'>
+circuit 0.0001031250057252541 <class 'str'>
+生长因子 0.00010256440587130591 <class 'str'>
+微分方程 0.00010152423693341081 <class 'str'>
+项目风险 0.00010118690056854934 <class 'str'>
+motion 0.00010075027497818281 <class 'str'>
+body 9.964902083166259e-05 <class 'str'>
+acid 9.955404453748632e-05 <class 'str'>
+lithium 9.944415921201832e-05 <class 'str'>
+二硫化钼 9.913271650803155e-05 <class 'str'>
+cost 9.843230946513048e-05 <class 'str'>
+马尔可夫 9.749983295947454e-05 <class 'str'>
+work 9.717828884733927e-05 <class 'str'>
+wechat 9.714245568134627e-05 <class 'str'>
+基因组学 9.705412867288522e-05 <class 'str'>
+并行计算 9.689363076891323e-05 <class 'str'>
+产品开发 9.658088580610218e-05 <class 'str'>
+networks 9.589011442161882e-05 <class 'str'>
+digital 9.556155706332833e-05 <class 'str'>
+在线教育 9.545807022213825e-05 <class 'str'>
+文化差异 9.536694759731939e-05 <class 'str'>
+field 9.526221768390244e-05 <class 'str'>
+线性规划 9.492834013559384e-05 <class 'str'>
+聚乙二醇 9.454420709252766e-05 <class 'str'>
+systems 9.432863258595674e-05 <class 'str'>
+rate 9.415762310318335e-05 <class 'str'>
+管理体系 9.39656167882323e-05 <class 'str'>
+数据中心 9.38580481441607e-05 <class 'str'>
+process 9.360188305781723e-05 <class 'str'>
+系统工程 9.340347593723174e-05 <class 'str'>
+development 9.250121584797239e-05 <class 'str'>
+mimo 9.244487738056884e-05 <class 'str'>
+reits 9.210792298783489e-05 <class 'str'>
+绩效考核 9.209912643806435e-05 <class 'str'>
+损害赔偿 9.192647254785303e-05 <class 'str'>
+valuation 9.182931927019854e-05 <class 'str'>
+品牌战略 9.167941724687538e-05 <class 'str'>
+各向异性 9.166462344044351e-05 <class 'str'>
+principal 9.158351425159065e-05 <class 'str'>
+asia 9.11087809408948e-05 <class 'str'>
+因子分析 9.050128265829253e-05 <class 'str'>
+control 9.047535587746057e-05 <class 'str'>
+形状记忆 9.029138516042244e-05 <class 'str'>
+subsidy 9.005890978624983e-05 <class 'str'>
+culture 8.970196279330287e-05 <class 'str'>
+意识形态 8.965870078347848e-05 <class 'str'>
+effect 8.961001630156339e-05 <class 'str'>
+太阳电池 8.954253120794982e-05 <class 'str'>
+open 8.944037076685209e-05 <class 'str'>
+资源分配 8.893588179456104e-05 <class 'str'>
+葡萄球菌 8.877722075970433e-05 <class 'str'>
+spark 8.823593696538875e-05 <class 'str'>
+sio2 8.804946222037596e-05 <class 'str'>
+计算机辅助 8.799795022091557e-05 <class 'str'>
+water 8.781093906428455e-05 <class 'str'>
+agent 8.776736333721165e-05 <class 'str'>
+分析方法 8.77507320227089e-05 <class 'str'>
+社会主义 8.718665505805237e-05 <class 'str'>
+adaptation 8.710376496635083e-05 <class 'str'>
+二氧化硅 8.671556835845737e-05 <class 'str'>
+聚酰亚胺 8.663044607570037e-05 <class 'str'>
+governance 8.642501717809624e-05 <class 'str'>
+适应控制 8.623788303750558e-05 <class 'str'>
+组织变革 8.619597074491374e-05 <class 'str'>
+effusion 8.588672904178351e-05 <class 'str'>
+random 8.581802269021305e-05 <class 'str'>
+glycoprotein 8.580078773080706e-05 <class 'str'>
+技术创新 8.569043981712696e-05 <class 'str'>
+应用程序 8.562561270165423e-05 <class 'str'>
+service 8.541968112072233e-05 <class 'str'>
+大肠杆菌 8.520977892588609e-05 <class 'str'>
+pseudomonas 8.517964057601127e-05 <class 'str'>
+智能手机 8.515184511903263e-05 <class 'str'>
+free 8.507796035795185e-05 <class 'str'>
+belt 8.483571383709345e-05 <class 'str'>
+time 8.473050812930968e-05 <class 'str'>
+对外汉语 8.444792295721326e-05 <class 'str'>
+前列腺癌 8.422726276575782e-05 <class 'str'>
+流式细胞 8.410232598649587e-05 <class 'str'>
+产品设计 8.389622421678752e-05 <class 'str'>
+diplomacy 8.387795099944091e-05 <class 'str'>
+基础设施 8.387589702149127e-05 <class 'str'>
+wireless 8.355374850562383e-05 <class 'str'>
+空间电荷 8.35456054933226e-05 <class 'str'>
+norm 8.352311354275999e-05 <class 'str'>
+consumer 8.351847705098133e-05 <class 'str'>
+cooling 8.330456891033738e-05 <class 'str'>
+问卷调查 8.327047297198643e-05 <class 'str'>
+study 8.310465880824065e-05 <class 'str'>
+任务调度 8.302797795604539e-05 <class 'str'>
+means 8.294211131265879e-05 <class 'str'>
+european 8.267854164469804e-05 <class 'str'>
+global 8.242348557545743e-05 <class 'str'>
+line 8.23698180886768e-05 <class 'str'>
+贸易协定 8.186506835377707e-05 <class 'str'>
+chinese 8.181216825872794e-05 <class 'str'>
+ofdm 8.17882041337763e-05 <class 'str'>
+egfr 8.171696015500962e-05 <class 'str'>
+signal 8.15704028733235e-05 <class 'str'>
+electrochemical 8.156628894466713e-05 <class 'str'>
+stock 8.144267037463201e-05 <class 'str'>
+scfv 8.142137699108741e-05 <class 'str'>
+公立医院 8.113517916600808e-05 <class 'str'>
+tio2 8.106568194892433e-05 <class 'str'>
+投资决策 8.094987066214554e-05 <class 'str'>
+smart 8.085340647602417e-05 <class 'str'>
+信号强度 8.054263704781247e-05 <class 'str'>
+saas 8.051082013215538e-05 <class 'str'>
+淋巴细胞 8.019055722952977e-05 <class 'str'>
+satisfaction 7.991728633842793e-05 <class 'str'>
+plasmonic 7.977881470019628e-05 <class 'str'>
+边界条件 7.939305988903776e-05 <class 'str'>
+behavior 7.935016949599714e-05 <class 'str'>
+人脸识别 7.93287168495515e-05 <class 'str'>
+content 7.924419685538128e-05 <class 'str'>
+laser 7.924139254669404e-05 <class 'str'>
+protection 7.920067928185494e-05 <class 'str'>
+services 7.910164451645136e-05 <class 'str'>
+国际贸易 7.901929706525198e-05 <class 'str'>
+骨关节炎 7.900060095352739e-05 <class 'str'>
+pier 7.888902319891453e-05 <class 'str'>
+bidirectional 7.876881934660082e-05 <class 'str'>
+making 7.82426522130164e-05 <class 'str'>
+recognition 7.809367633974015e-05 <class 'str'>
+三维重建 7.7988690535089e-05 <class 'str'>
+codes 7.777193421486151e-05 <class 'str'>
+家族企业 7.761105093191271e-05 <class 'str'>
+人力资本 7.751702196310588e-05 <class 'str'>
+estimation 7.726338244408517e-05 <class 'str'>
+supply 7.647113175399383e-05 <class 'str'>
+streptococcus 7.63118648112789e-05 <class 'str'>
+music 7.627425386429743e-05 <class 'str'>
+正当竞争 7.62466592595779e-05 <class 'str'>
+gp72 7.583297671183717e-05 <class 'str'>
+货币政策 7.583045249785516e-05 <class 'str'>
+production 7.575529393486054e-05 <class 'str'>
+磁控溅射 7.572397963785785e-05 <class 'str'>
+cross 7.568082958933915e-05 <class 'str'>
+perovskite 7.564710435033606e-05 <class 'str'>
+selfie 7.554109276189518e-05 <class 'str'>
+多元回归 7.546351165071791e-05 <class 'str'>
+satellite 7.543381876615445e-05 <class 'str'>
+fault 7.530564030894836e-05 <class 'str'>
+volunteer 7.517669348619905e-05 <class 'str'>
+marketing 7.498120712964723e-05 <class 'str'>
+real 7.488467073557652e-05 <class 'str'>
+文件系统 7.457019984266837e-05 <class 'str'>
+光电催化 7.441226428514503e-05 <class 'str'>
+个人信息 7.43280797578011e-05 <class 'str'>
+strategies 7.430214884560421e-05 <class 'str'>
+数据管理 7.407743690537565e-05 <class 'str'>
+women 7.381754845628117e-05 <class 'str'>
+--phrase--
+模式策略分析 <class 'str'>
+结构风险 <class 'str'>
+检测网络 <class 'str'>
+技术分析 <class 'str'>
+技术风险 <class 'str'>
+优化设计 <class 'str'>
+检测优化 <class 'str'>
+管理战略管理 <class 'str'>
+控制模式 <class 'str'>
+系统数据 <class 'str'>
+网络模型 <class 'str'>
+风险模型 <class 'str'>
+模式风险 <class 'str'>
+模型设计 <class 'str'>
+模型算法 <class 'str'>
+风险理论 <class 'str'>
+风险分析 <class 'str'>
+管理技术 <class 'str'>
+分析系统 <class 'str'>
+网络设计 <class 'str'>
+算法数据 <class 'str'>
+理论数据 <class 'str'>
+算法设计 <class 'str'>
+管理战略分析 <class 'str'>
+设计优化 <class 'str'>
+策略分析 <class 'str'>
+分析战略 <class 'str'>
+风险模型风险 <class 'str'>
+检测系统 <class 'str'>
+管理管理 <class 'str'>
+系统设计 <class 'str'>
+系统设计系统 <class 'str'>
+设计系统 <class 'str'>
+法模式 <class 'str'>
+系统理论 <class 'str'>
+战略理论 <class 'str'>
+网络法 <class 'str'>
+企业战略企业 <class 'str'>
+战略控制 <class 'str'>
+数据企业 <class 'str'>
+法网络 <class 'str'>
+管理战略 <class 'str'>
+法风险 <class 'str'>
+结构模型 <class 'str'>
+控制模型 <class 'str'>
+战略策略 <class 'str'>
+策略技术分析 <class 'str'>
+分析技术 <class 'str'>
+结构企业 <class 'str'>
+优化设计策略分析 <class 'str'>
+检测算法 <class 'str'>
+法数据 <class 'str'>
+风险控制 <class 'str'>
+企业战略 <class 'str'>
+策略风险 <class 'str'>
+管理结构 <class 'str'>
+检测控制 <class 'str'>
+网络结构 <class 'str'>
+企业战略战略管理 <class 'str'>
+结构控制 <class 'str'>
+风险设计 <class 'str'>
+分析数据 <class 'str'>
+模型战略 <class 'str'>
+结构设计 <class 'str'>
+模型结构优化 <class 'str'>
+风险分析风险 <class 'str'>
+企业战略战略 <class 'str'>
+分析结构优化 <class 'str'>
+企业战略管理 <class 'str'>
+优化系统 <class 'str'>
+网络数据 <class 'str'>
+策略企业 <class 'str'>
+分析优化 <class 'str'>
+模型企业 <class 'str'>
+结构分析 <class 'str'>
+优化分析 <class 'str'>
+战略理论战略 <class 'str'>
+企业企业 <class 'str'>
+控制风险 <class 'str'>
+设计结构 <class 'str'>
+优化法 <class 'str'>
+优化结构分析 <class 'str'>
+数据战略管理 <class 'str'>
+风险风险 <class 'str'>
+法设计 <class 'str'>
+管理企业战略 <class 'str'>
+战略数据 <class 'str'>
+优化算法分析 <class 'str'>
+风险分析控制 <class 'str'>
+优化模型 <class 'str'>
+技术风险控制 <class 'str'>
+优化管理 <class 'str'>
+分析企业战略 <class 'str'>
+理论模型 <class 'str'>
+技术管理 <class 'str'>
+设计设计系统 <class 'str'>
+管理优化模型 <class 'str'>
+技术法 <class 'str'>
+设计设计 <class 'str'>
+系统模型 <class 'str'>
+企业数据 <class 'str'>
+战略战略 <class 'str'>
+策略模型 <class 'str'>
+理论技术 <class 'str'>
+分析风险 <class 'str'>
+模型优化技术 <class 'str'>
+模型风险 <class 'str'>
+企业战略企业管理 <class 'str'>
+分析结构 <class 'str'>
+结构优化 <class 'str'>
+检测技术 <class 'str'>
+法检测 <class 'str'>
+分析网络 <class 'str'>
+管理技术管理 <class 'str'>
+模式优化 <class 'str'>
+风险战略 <class 'str'>
+系统优化 <class 'str'>
+管理优化 <class 'str'>
+管理数据 <class 'str'>
+结构检测 <class 'str'>
+设计策略 <class 'str'>
+管理策略 <class 'str'>
+模型分析 <class 'str'>
+管理企业模式战略管理企业 <class 'str'>
+网络优化 <class 'str'>
+网络控制 <class 'str'>
+模型管理 <class 'str'>
+管理模型 <class 'str'>
+理论结构 <class 'str'>
+优化算法 <class 'str'>
+结构数据 <class 'str'>
+企业风险 <class 'str'>
+系统企业战略 <class 'str'>
+技术企业 <class 'str'>
+模型策略 <class 'str'>
+控制检测 <class 'str'>
+控制结构 <class 'str'>
+设计分析设计 <class 'str'>
+模型网络 <class 'str'>
+模型战略优化 <class 'str'>
+技术数据 <class 'str'>
+结构理论 <class 'str'>
+检测检测 <class 'str'>
+法战略 <class 'str'>
+模式战略 <class 'str'>
+设计理论 <class 'str'>
+分析战略管理 <class 'str'>
+检测模式 <class 'str'>
+检测模型 <class 'str'>
+策略优化 <class 'str'>
+风险控制风险 <class 'str'>
+数据技术 <class 'str'>
+战略战略管理 <class 'str'>
+检测数据 <class 'str'>
+法优化算法 <class 'str'>
+策略算法 <class 'str'>
+优化策略 <class 'str'>
+数据算法 <class 'str'>
+企业战略分析 <class 'str'>
+优化网络 <class 'str'>
+数据结构 <class 'str'>
+系统网络 <class 'str'>
+设计分析 <class 'str'>
+战略设计 <class 'str'>
+数据检测 <class 'str'>
+管理管理优化 <class 'str'>
+企业管理 <class 'str'>
+管理企业 <class 'str'>
+战略战略模型 <class 'str'>
+分析企业 <class 'str'>
+战略企业 <class 'str'>
+模型控制 <class 'str'>
+战略管理 <class 'str'>
+网络网络 <class 'str'>
+策略企业战略 <class 'str'>
+系统风险 <class 'str'>
+数据战略数据 <class 'str'>
+战略分析 <class 'str'>
+模型结构 <class 'str'>
+战略管理战略 <class 'str'>
+数据数据 <class 'str'>
+理论网络 <class 'str'>
+优化控制 <class 'str'>
+控制企业 <class 'str'>
+优化优化 <class 'str'>
+分析优化设计优化算法 <class 'str'>
+系统系统设计 <class 'str'>
+策略战略 <class 'str'>
+法风险分析 <class 'str'>
+分析优化设计 <class 'str'>
+风险管理 <class 'str'>
+分析模式 <class 'str'>
+算法优化 <class 'str'>
+结构优化设计 <class 'str'>
+模型分析设计 <class 'str'>
+分析管理 <class 'str'>
+企业设计 <class 'str'>
+网络优化网络 <class 'str'>
+结构企业管理 <class 'str'>
+模式模式 <class 'str'>
+分析风险控制 <class 'str'>
+控制网络 <class 'str'>
+分析设计 <class 'str'>
+模式设计 <class 'str'>

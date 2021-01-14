@@ -6,16 +6,16 @@ from selenium.webdriver.support.ui import Select
 import time
 
 workbook = xlwt.Workbook() #create excel worksheet
-sheet =workbook.add_sheet("2015",cell_overwrite_ok=True)
+sheet =workbook.add_sheet("2018",cell_overwrite_ok=True)
 
 wd = webdriver.Chrome()
 wd.get("http://thesis.lib.sjtu.edu.cn/sub.asp")    # 打开百度浏览器
-wd.find_element_by_name("content").send_keys("2015")
+wd.find_element_by_name("content").send_keys("2018")
 select = Select(wd.find_element_by_name('choose_key'))
 select.select_by_value("year")
 button = wd.find_element_by_css_selector("input[type = 'submit']")   
 button.click()
-pages = range(293)
+pages = range(292)
 row = 0
 for page in pages:
   table = wd.find_elements_by_css_selector("tr[height = '35px']")
@@ -33,5 +33,5 @@ for page in pages:
   pagination = wd.find_element_by_class_name("pagination")
   pagination.find_element_by_link_text('>').click()
 time.sleep(1)   #等待3秒
-workbook.save('data_2015.xls')
+workbook.save('data_2018.xls')
 wd.quit()   #关闭浏览器
