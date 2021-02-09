@@ -1,17 +1,26 @@
 import * as d3 from "d3";
 import cloud from "d3-cloud";
+import data from "../data/cloud";
+import allTopic from "../data/allTopic";
 const draw = (props) => {
-  var frequency_list = [
-    { text: "互联网", size: 50 },
-    { text: "有限元", size: 20 },
-    { text: "复合材料", size: 40 },
-    { text: "传感器", size: 30 },
-    { text: "swot", size: 19 },
-    { text: "神经网络", size: 80 },
-    { text: "人满为患", size: 50 },
-    { text: "动力学", size: 70 },
-    { text: "机器人", size: 80 },
-  ];
+  d3.selectAll(".cloud-vis > *").remove();
+  const { selectedTopic, selectedMentor, isMentor } = props;
+  var frequency_list = [];
+  if (!isMentor)
+    data[selectedTopic[0]].forEach((e, i) => {
+      frequency_list.push({ text: e, size: Math.log(i) * 30 });
+    });
+  // var frequency_list = [
+  //   { text: "互联网", size: 50 },
+  //   { text: "有限元", size: 20 },
+  //   { text: "复合材料", size: 40 },
+  //   { text: "传感器", size: 30 },
+  //   { text: "swot", size: 19 },
+  //   { text: "神经网络", size: 80 },
+  //   { text: "人满为患", size: 50 },
+  //   { text: "动力学", size: 70 },
+  //   { text: "机器人", size: 80 },
+  // ];
   /*
 神经网络
 动力学
@@ -33,7 +42,7 @@ swot
     .range(d3.schemeCategory10);
 
   var layout = cloud()
-    .size([400, 300])
+    .size([700, 500])
     .words(frequency_list)
     .rotate(0)
     .fontSize(function (d) {

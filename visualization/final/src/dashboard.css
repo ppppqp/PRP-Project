@@ -41,13 +41,14 @@ header .showTime {
 .mainbox .column {
   flex: 3;
   margin: 5px;
-  margin-top: 0;
+  margin-top: 0px;
 }
 .mainbox .column:nth-child(2) {
   flex: 6;
 }
 .mainbox:nth-child(2) {
-  height: 596px;
+  margin-top: 10px;
+  height: 580px;
 }
 
 .panel {
@@ -118,8 +119,8 @@ header .showTime {
 }
 
 .recommend {
-  height: 596px;
+  height: 580px;
 }
 .graph {
-  height: 596px;
+  height: 580px;
 }

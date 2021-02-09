@@ -3,7 +3,6 @@ import colorScale from "../../colorScale";
 const draw = (props) => {
   d3.selectAll(".vis-scatter > *").remove();
   const { dataV, dataE, selectedTopic } = props;
-  console.log(dataV);
   /*
   const dataV = [
     { name: "Apple", value: 13 },
@@ -26,8 +25,8 @@ const draw = (props) => {
     keyRange.push(d.name);
   });
 
-  const width = 1200;
-  const height = 590;
+  const width = 400;
+  const height = 500;
   let margin = { top: 20, right: 20, bottom: 30, left: 40 };
   let svg = d3
     .select(".vis-scatter")
@@ -53,7 +52,7 @@ const draw = (props) => {
   const sizeScale = d3
     .scaleSqrt()
     .domain([0, d3.max(dataV, (d) => d.value)])
-    .range([0, 40]);
+    .range([0, 20]);
 
   //TODO: draw the chart
   var scaleColor = d3
@@ -97,7 +96,7 @@ const draw = (props) => {
     .force("link")
     .links(dataE)
     .distance(function (d, i) {
-      return d.value * 200; //设置边长
+      return d.value * 100; //设置边长
     });
   forceSimulation
     .force("center")

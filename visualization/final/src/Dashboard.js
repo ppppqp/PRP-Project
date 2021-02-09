@@ -19,11 +19,13 @@ import Info from "./components/info";
 import Recommend from "./components/recommend";
 import Scatter from "./charts/Graph/index";
 import Cloud from "./components/cloud";
+import detailedKey from "./detailedKey";
 const { Sider, Content, Footer } = Layout;
 
 export default class Dashboard extends Component {
   componentDidMount() {
     this.getData();
+    this.updateGraph();
   }
   state = {
     data: [],
@@ -31,7 +33,7 @@ export default class Dashboard extends Component {
     dataE: [],
     dataV: [],
     dataRecom: [],
-    selectedMentor: "董笑菊",
+    selectedMentor: ["董笑菊"],
     selectedTopic: allTopic,
     selectedYear: "2019",
     dataTheme: [
@@ -42,23 +44,21 @@ export default class Dashboard extends Component {
       { year: 2015 },
     ],
     dataLegend: {},
+    dataRecomKey: {},
   };
   changeYearHandle = (target) => {
-    console.log(target);
     this.setState({ selectedYear: target.toString() });
     this.updateLegend();
     this.updateGraph();
   };
   changeTopicHandle = (target) => {
-    //console.log(target);
     if (target === "全选") this.setState({ selectedTopic: allTopic });
     else this.setState({ selectedTopic: [target] });
     this.updateTheme();
     this.updateGraph();
   };
   changeMentorHandle = (target) => {
-    console.log(target);
-    this.setState({ selectedMentor: target });
+    this.setState({ selectedMentor: [target] });
     this.updateTheme();
     this.updateGraph();
   };
@@ -83,13 +83,13 @@ export default class Dashboard extends Component {
         //d.keyword = arr;
       });
       this.setState({ data: data });
+
       this.updateGraph();
       this.updateTheme();
     });
     let Keys = [];
     csv("./Keys2.csv").then((data) => {
       Keys = data;
-      console.log(Keys);
       this.setState({ Keys: Keys });
     });
   }
@@ -103,10 +103,9 @@ export default class Dashboard extends Component {
     let { data, selectedTopic, selectedMentor } = this.state;
     const isMentor = this.props.match.path === "/Mentor";
     let key = isMentor ? "mentor" : "school";
-    console.log(selectedMentor);
     let filtered = data.filter((d) => {
       return isMentor
-        ? selectedMentor === d["mentor"]
+        ? selectedMentor[0] === d["mentor"]
         : selectedTopic.indexOf(d["school"]) != -1;
     });
     let newDataTheme = [
@@ -123,7 +122,6 @@ export default class Dashboard extends Component {
       else newDataTheme[this.getYearIndex(d.year)][d[key]]++;
       this.eliminateNan(this.getYearIndex(d.year), 5, newDataTheme, d[key]);
     });
-    console.log(newDataTheme);
     this.setState({ dataTheme: newDataTheme });
     this.updateLegend();
   }
@@ -134,18 +132,45 @@ export default class Dashboard extends Component {
     if (selectedYear === "2017") this.setState({ dataLegend: dataTheme[2] });
     if (selectedYear === "2016") this.setState({ dataLegend: dataTheme[3] });
     if (selectedYear === "2015") this.setState({ dataLegend: dataTheme[4] });
-    console.log(this.state.dataLegend);
   }
   updateGraph() {
     const isMentor = this.props.match.path === "/Mentor";
-    const { data, selectedYear, selectedTopic, Keys } = this.state;
+    const {
+      data,
+      selectedYear,
+      selectedTopic,
+      selectedMentor,
+      Keys,
+    } = this.state;
     let edgeSet = [],
       verticeSet = [];
     let recomSet = {};
     if (isMentor) {
+      /*
+      const target = selectedMentor[0];
+      let targetKeys = {};
+      data.forEach((d) => {
+        let arr = [];
+        if (d.keyword[d.keyword.length - 1] === ";")
+          d.keyword.slice(0, d.keyword.length - 1);
+        if (d.keyword.indexOf(";") !== -1) arr = d.keyword.split(";");
+        //get rid of the last ";"
+        else if (d.keyword.indexOf("，") !== -1) arr = d.keyword.split("，");
+        for (let i = 0; i < arr.length; i++) {
+          */
+      //arr[i] = arr[i].replace(/\s*/g, "");
+      /*
+          if (targetKeys.hasOwnProperty(arr[i])) targetKeys[arr[i]]++;
+          else targetKeys[arr[i]] = 1;
+        }
+      });
+      data.forEach((d)=>{
+        if(d.mentor!==target && )
+      })
+      */
     } else {
       const target = selectedTopic[0];
-      const index = 1; //TODO
+      const index = allTopic.indexOf(target); //TODO
       let count = 1;
       verticeSet.push({
         name: target,
@@ -155,13 +180,14 @@ export default class Dashboard extends Component {
       let keysSorted = Object.keys(weight[index]).sort(function (a, b) {
         return weight[index][b] - weight[index][a];
       });
-
-      for (let i = 0; i < 9; i++) {
-        console.log(keysSorted[i]);
-        console.log(weight[index][keysSorted[i]]);
+      for (let i = 0; i < 8; i++) {
         recomSet[keysSorted[i]] = weight[index][keysSorted[i]];
       }
       this.setState({ dataRecom: recomSet });
+      const temp = detailedKey[allTopic.indexOf(selectedTopic[0])];
+      this.setState({
+        dataRecomKey: temp,
+      });
       for (let key in weight[index]) {
         if (weight[index][key] > 0) {
           verticeSet.push({
@@ -208,15 +234,14 @@ export default class Dashboard extends Component {
       dataTheme,
       dataLegend,
       dataRecom,
+      dataRecomKey,
     } = this.state;
-    console.log(dataV);
+
     const isMentor = this.props.match.path === "/Mentor";
     var name;
     var dataScatterV = [];
     var dataScatterE = [];
-
     if (!isMentor) {
-      console.log(dataTheme);
       name = selectedTopic;
       dataTheme.forEach((d) => {
         if (d.year == String(selectedYear)) {
@@ -248,8 +273,10 @@ export default class Dashboard extends Component {
                 />
                 <Legend
                   selectedTopic={selectedTopic}
+                  selectedMentor={selectedMentor}
                   data={dataLegend}
                   selectedYear={selectedYear}
+                  isMentor={isMentor}
                 />
                 <div class="panel-footer"></div>
               </div>
@@ -261,7 +288,9 @@ export default class Dashboard extends Component {
                   data={dataTheme}
                   width={850}
                   height={230}
+                  isMentor={isMentor}
                   selectedYear={selectedYear}
+                  onChangeMentor={this.changeMentorHandle}
                   onChangeYear={this.changeYearHandle}
                   onChangeTopic={this.changeTopicHandle}
                 />
@@ -270,13 +299,13 @@ export default class Dashboard extends Component {
             </div>
             <div class="column">
               <div class="panel info">
-                <div class="boxhead">热点</div>
+                <div class="boxhead">热点 Hot topics</div>
                 {/* <Info
                   selectedYear={selectedYear}
                   selectedMentor={selectedMentor}
                   selectedTopic={selectedTopic}
                 /> */}
-                <Cloud />
+
                 <div class="panel-footer"></div>
               </div>
             </div>
@@ -285,13 +314,24 @@ export default class Dashboard extends Component {
             <div class="column">
               <div class="panel recommend">
                 <div class="boxhead">Recommendation</div>
-                <Recommend data={dataRecom} />
+                <Recommend
+                  data={dataRecom}
+                  keys={dataRecomKey}
+                  fulldata={data}
+                />
                 <div class="panel-footer"></div>
               </div>
             </div>
             <div class="column">
               <div class="panel graph">
-                <div class="boxhead">Graph View</div>
+                <div class="boxhead">Hot Topic</div>
+                <Cloud selectedTopic={selectedTopic} />
+                <div class="panel-footer"></div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="panel recommend">
+                <div class="boxhead">Graph</div>
                 <Scatter
                   dataV={dataV}
                   dataE={dataE}

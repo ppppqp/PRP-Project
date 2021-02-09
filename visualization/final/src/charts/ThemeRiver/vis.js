@@ -2,11 +2,14 @@ import * as d3 from "d3";
 import _, { floor } from "lodash";
 import colorScale from "../../colorScale";
 import "./style.css";
+import allTopic from "../../data/allTopic";
 
 const draw = ({
   data,
   width,
   height,
+  isMentor,
+  onChangeMentor,
   selectedYear,
   onChangeYear,
   onChangeTopic,
@@ -24,7 +27,7 @@ const draw = ({
   let count = 0;
   let yearData; // how many years covered
   let maxNum = 0; // max number of the sum of all themes in each years
-  let domain = []; // domain of all the themes
+  let domain = isMentor ? [] : allTopic; // domain of all the themes
 
   // get the data for pie chart
   data.forEach((d) => {
@@ -40,17 +43,17 @@ const draw = ({
     }
   }
 */
+  console.log(data);
   data.forEach((d) => {
     var sum = 0;
     for (var key in d) {
-      if (key != "year" && domain.indexOf(key) < 0) domain.push(key);
+      if (isMentor && key != "year" && domain.indexOf(key) < 0)
+        domain.push(key);
       if (key != "year") sum += d[key];
     }
     if (maxNum < sum) maxNum = sum;
   });
-  console.log(data);
   console.log(domain);
-  //maxNum += 10;
   d3.selectAll(".vis-themeRiver > *").remove();
   let margin = { top: 20, right: 20, bottom: 30, left: 40 };
   var svg = d3
@@ -65,7 +68,7 @@ const draw = ({
   var stackGen = d3.stack().keys(domain).order(d3.stackOrderNone);
   //.offset(d3.stackOffsetWiggle);
   var stackedSeries = stackGen(data);
-  console.log(stackedSeries);
+
   const Riverscale = 1;
   // Add X axis --> it is a date format
   let xScale = d3
@@ -88,7 +91,10 @@ const draw = ({
     .remove();
 
   // Add Y axis
-  var yScale = d3.scaleLinear().domain([0, maxNum]).range([height, 0]);
+  var yScale = d3
+    .scaleLinear()
+    .domain([0, maxNum])
+    .range([height - 20, 0]);
   svg.append("g").call(d3.axisLeft(yScale));
   /*
   var colorScale = d3
@@ -128,7 +134,6 @@ const draw = ({
       });
     })
     .on("click", function (event, i) {
-      console.log(i.key);
       onChangeTopic(i.key);
     });
 
@@ -140,7 +145,7 @@ const draw = ({
     .style("bottom", "0px")
     .style("left", "0px")
     .style("width", "1px")
-    .style("height", "230px")
+    .style("height", "280px")
     .style("background", "#fff");
   d3.select(".vis-themeRiver")
     .on("mousemove", function (event, d) {

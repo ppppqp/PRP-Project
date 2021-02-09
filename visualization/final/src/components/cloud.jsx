@@ -8,6 +8,7 @@ class Cloud extends Component {
     draw(this.props);
   }
   render() { 
+    console.log(this.props)
     return ( <div class = "cloud-vis"></div> );
   }
 }

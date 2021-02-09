@@ -27,17 +27,17 @@ class Legend extends Component {
   scaleLength(t){
     const {data} = this.props;
     const maxNum = this.findMax();
-    console.log(maxNum);
     const scale = d3.scaleLinear().domain([0, maxNum]).range([0,150])
     return scale(data[t] === undefined ? 0 : data[t]);
   }
   render() {
 
-    let{selectedTopic} = this.props;
-    return( 
+    let{selectedTopic, selectedMentor, isMentor} = this.props;
+    const data = (isMentor) ? selectedMentor : selectedTopic
+    return(
       <div className="Legend-vis">
         {
-          selectedTopic.map((t)=>{
+          data.map((t)=>{
             let color ={};
             color["bgcolor"] = colorScale(t);
             return (
@@ -51,7 +51,7 @@ class Legend extends Component {
           })
         }
       </div>
-    );
+    )
   }
 }
  

@@ -6,6 +6,7 @@ import HiddenBox from "./HiddenBox";
 class Recommend extends Component {
   state = {
     id: -1,
+    selected: 0
     }
   findMax(){
     const {data} = this.props;
@@ -16,7 +17,14 @@ class Recommend extends Component {
     return maxNum;
   }
   onClick(id){
-    this.setState({id:id});
+    if(this.state.selected === 1){
+      this.setState({id:-1});
+      this.setState({selected: 0});
+    }
+    else {
+      this.setState({id:id});
+      this.setState({selected: 1});
+    }
   }
 
   onHover(id){
@@ -36,7 +44,7 @@ class Recommend extends Component {
     return scale(data[t] === undefined ? 0 : data[t]);
   }
   render() {
-    let{data} = this.props;
+    let{data, keys,isMentor, fulldata} = this.props;
     let domain = [];
     for(let key in data){
          domain.push(key);
@@ -58,8 +66,8 @@ class Recommend extends Component {
                   </div>
                 <div class = "name">{t}</div>
               </div>
-                <HiddenBox id = {domain.indexOf(t)} chosen = {this.state.id}>
-              </HiddenBox>
+                {<HiddenBox id = {domain.indexOf(t)} chosen = {this.state.id} topic = {t} keys = {keys} fulldata={fulldata}>
+              </HiddenBox> }
             </div>
           )
         })
