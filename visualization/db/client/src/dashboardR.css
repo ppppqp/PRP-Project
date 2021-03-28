@@ -1,0 +1,29 @@
+
+.relationView {
+  display: flex;
+}
+.section1 {
+  flex: 3;
+}
+.section2 {
+  flex: 6;
+}
+.section2 .mainbox {
+  height: 890px;
+}
+.section2 .mainbox .column .panel {
+  height: 890px;
+}
+.mainbox .column {
+  flex: 3;
+  margin: 5px;
+  margin-top: 0px;
+}
+.relationView .mainbox .column:nth-child(2) {
+  flex: 3;
+}
+.relationView .mainbox:nth-child(2) {
+  margin-top: 10px;
+  height: 580px;
+}
+
